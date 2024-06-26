@@ -55,6 +55,7 @@ public class LoadDataActivity extends AppCompatActivity {
         getDataUser();
         if (isOnline()) {
             setActivity(UserName , Password);
+
         } else {
             Intent intent =new Intent(LoadDataActivity.this , DataBaseError.class);
             startActivity(intent);
@@ -82,6 +83,7 @@ public class LoadDataActivity extends AppCompatActivity {
         SharedPreferences DataUser = getSharedPreferences( SAVEDATAUSER  , MODE_PRIVATE);
         UserName = DataUser.getString(USERNAME_KEY , null);
         Password = DataUser.getString(PASSWORD_KEY, null);
+
     }
     private void setActivity(String UserName , String UserPassword){
         if(Objects.isNull(UserName) && Objects.isNull(UserPassword)){
