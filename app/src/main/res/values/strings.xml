@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Weight Loss Control Android</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="type_your_username">Type your username</string>
+    <string name="type_your_password">Type your password</string>
+    <string name="create_a_new_account">Create a new account</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_in">Sign in</string>
+    <string name="type_desired_weight">Type desired weight</string>
+    <string name="type_your_weight">Type your weight</string>
+    <string name="title_activity_main2">MainActivity2</string>
+
+</resources>

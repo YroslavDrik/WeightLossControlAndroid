@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.WeightLossControlAndroid" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/Green</item>
+        <item name="colorPrimaryVariant">@color/DarkGreen</item>
+
+        <item name="colorOnPrimary">@color/LightGreen</item>
+
+        <item name="colorSecondary">@color/LightGreen</item>
+        <item name="colorSecondaryVariant">@color/DarkGreen</item>
+        <item name="colorOnSecondary">@color/Green</item>
+        <item name="android:statusBarColor">@color/DarkGreen</item>
+        <item name="colorAccent">@color/Green</item>
+
+    </style>
+</resources>

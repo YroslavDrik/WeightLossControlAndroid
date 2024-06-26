@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/DarkGray"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="110dp"
+        android:background="@drawable/relativelaiut_shape_corners"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="25dp"
+                android:hint="@string/type_your_username"
+                android:textColorHint="@color/DarkGreen"
+                app:counterTextColor="@color/DarkGreen"
+                app:helperTextTextColor="@color/DarkGreen"
+                app:hintTextColor="@color/DarkGreen"
+                app:placeholderTextColor="@color/DarkGreen"
+                app:prefixTextColor="@color/DarkGreen"
+                app:startIconDrawable="@drawable/baseline_person_24"
+                app:startIconTint="@color/DarkGreen"
+                app:suffixTextColor="@color/DarkGreen">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/TextBoxUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/type_your_username"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/Green"
+
+                    android:textColorHint="@color/Green"
+                    tools:ignore="DuplicateIds,TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginRight="25dp"
+                android:hint="@string/type_your_password"
+                android:textColorHint="@color/DarkGreen"
+                app:counterTextColor="@color/DarkGreen"
+                app:helperTextTextColor="@color/DarkGreen"
+                app:hintTextColor="@color/DarkGreen"
+                app:placeholderTextColor="@color/DarkGreen"
+                app:prefixTextColor="@color/DarkGreen"
+                app:startIconDrawable="@drawable/baseline_lock_24"
+                app:startIconTint="@color/DarkGreen"
+                app:suffixTextColor="@color/DarkGreen">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/TextBoxPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/type_your_password"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/Green"
+                    android:textColorHint="@color/Green"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/CreateAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="12dp"
+                android:background="#00FFFFFF"
+                android:text="@string/create_a_new_account"
+                android:textColor="#00C853"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/SignInButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginRight="50dp"
+                android:text="@string/log_in"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:cornerRadius="10dp"
+                app:toggleCheckedStateOnClick="true" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="445dp"
+        android:background="@drawable/image_relativelaiut_shape"
+        android:contentDescription="TODO"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="@+id/relativeLayout"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/baseline_person_32" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
