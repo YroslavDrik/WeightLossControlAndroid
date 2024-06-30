@@ -53,7 +53,8 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:text="Add weight"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/AddWeightEditText"
