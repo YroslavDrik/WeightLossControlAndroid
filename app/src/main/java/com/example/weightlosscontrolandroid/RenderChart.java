@@ -58,6 +58,7 @@ public class RenderChart {
         Legend legend = barChart.getLegend();
         legend.setTextColor(whiteColor);
 
+        
         barChart.getDescription().setEnabled(false);
         barChart.setData(data);
         barChart.setFitBars(true);

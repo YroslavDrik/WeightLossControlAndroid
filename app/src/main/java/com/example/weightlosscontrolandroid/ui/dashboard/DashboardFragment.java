@@ -74,6 +74,7 @@ public class DashboardFragment extends Fragment {
                     try {
                         Double weight = Double.parseDouble(weightText);
                         UpdateValue(weight);
+                        AddWeightEditText.setText("");
                     } catch (NumberFormatException ignored) {}
                 }
             }
@@ -133,6 +134,8 @@ public class DashboardFragment extends Fragment {
                 List<String> StringList = CreatingStringListBox(UserData.WeightChanges);
                 ListAdapter adapter = new ListAdapter(getActivity(), StringList  , UserData.DateChanges);
                 listView.setAdapter(adapter);
+                UpdateBase();
+
             }
 
             @Override

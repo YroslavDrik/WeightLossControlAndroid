@@ -130,9 +130,10 @@ public class HomeFragment extends Fragment {
             }
             double MaxProgressBarWeight = ListWeight.get(0)-Desired;
             double ProgressBarWeight = ListWeight.get(0)- ListWeight.get(ListWeight.size()-1);
+            double roundedMaxProgressBarWeight = Math.round(MaxProgressBarWeight * 10.0) / 10.0;
             WeightProgressBar.setMax((int)MaxProgressBarWeight);
             WeightProgressBar.setProgress((int) ProgressBarWeight);
-            WeightText.setText((ProgressBarWeight)+"/"+(MaxProgressBarWeight));
+            WeightText.setText((ProgressBarWeight)+"/"+(roundedMaxProgressBarWeight));
         }
     }
 

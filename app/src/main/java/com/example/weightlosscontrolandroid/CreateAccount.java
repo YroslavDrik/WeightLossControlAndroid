@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import android.content.Intent;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import com.google.android.material.textfield.TextInputEditText;
@@ -58,7 +59,6 @@ public class CreateAccount extends AppCompatActivity {
                     mDatabase = FirebaseDatabase.getInstance().getReference("Account");
                     WeightChanges.add(Double.parseDouble(EditTextWeightChanges.getText().toString()));
 
-
                     Todo todo = new Todo(
                             EditTextUserName.getText().toString(),
                             EditTextUserName.getText().toString(),
@@ -73,9 +73,8 @@ public class CreateAccount extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     });
-                }
 
-            }
+            }}
         });
 
 
