@@ -148,9 +148,9 @@ public class DashboardFragment extends Fragment {
     private List<String> CreatingStringListBox(List<Double> Weight)
     {
         List<String> FullString = new ArrayList<String>();
-        for (int i = 0; i < Weight.size(); i++)
+        for (int i = Weight.size(); i >0; i--)
         {
-            String item = (i+1) + ". " + "Weight: " + Weight.get(i);
+            String item = (i) + ". " + "Weight: " + Weight.get(i-1);
             FullString.add(item);
         }
         return FullString;

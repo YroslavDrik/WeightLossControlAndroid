@@ -51,8 +51,8 @@ public class HomeFragment extends Fragment {
     private Todo UserData;
 
     private FragmentHomeBinding binding;
-    private ProgressBar DayProgressBar , WeightProgressBar;
-    private TextView DayText , WeightText;
+    private ProgressBar WeightProgressBar;
+    private TextView DayTextView , WeightText ,  WeightNowText;
     private BarChart BarChart;
 
     private String UserName;
@@ -83,9 +83,9 @@ public class HomeFragment extends Fragment {
         SharedPreferences DataUser = getActivity().getSharedPreferences( SAVEDATAUSER  , getActivity().MODE_PRIVATE);
         UserName = DataUser.getString(USERNAME_KEY , null);
         SwipeUpdate = binding.swipeUpdate;
-        DayProgressBar = binding.progressBarDay;
         WeightProgressBar = binding.progressBarWeight;
-        DayText = binding.TextDay;
+        DayTextView = binding.DayTextView;
+        WeightNowText = binding.WeightTextView;
         WeightText = binding.TextWeight;
         BarChart = binding.barChart;
 
@@ -116,18 +116,9 @@ public class HomeFragment extends Fragment {
             currentYear = Year.now().getValue();
             LocalDate date = LocalDate.parse(dateString);
             LocalDate currentDate = LocalDate.now();
-            int daysBetween = (int) ChronoUnit.DAYS.between(date ,currentDate );
-            if(Year.isLeap(currentYear)){
-                //366
-                DayProgressBar.setMax(366);
-
-                DayProgressBar.setProgress(daysBetween);
-                DayText.setText(daysBetween + "/366");
-            }else{
-                DayProgressBar.setMax(365);
-                DayProgressBar.setProgress(daysBetween);
-                DayText.setText(daysBetween + "/365");
-            }
+            int daysBetween = (int) ChronoUnit.DAYS.between(date ,currentDate);
+            DayTextView.setText("Control days: " + daysBetween);
+            WeightNowText.setText("Weight now: " + ListWeight.get(ListWeight.size()-1) );
             double MaxProgressBarWeight = ListWeight.get(0)-Desired;
             double ProgressBarWeight = ListWeight.get(0)- ListWeight.get(ListWeight.size()-1);
             double roundedMaxProgressBarWeight = Math.round(MaxProgressBarWeight * 10.0) / 10.0;

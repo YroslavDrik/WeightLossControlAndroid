@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/DarkGray"
+    tools:context=".DeleteAllEntries">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="140dp"
+        android:background="@drawable/relativelaiut_shape_corners"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="25dp"
+                android:hint="@string/type_your_weight"
+                android:textColorHint="@color/DarkGreen"
+                app:counterTextColor="@color/DarkGreen"
+                app:helperTextTextColor="@color/DarkGreen"
+                app:hintTextColor="@color/DarkGreen"
+                app:placeholderTextColor="@color/DarkGreen"
+                app:prefixTextColor="@color/DarkGreen"
+                app:startIconDrawable="@drawable/baseline_control_camera_24"
+                app:startIconTint="@color/DarkGreen"
+                app:suffixTextColor="@color/DarkGreen">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/EditTextWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/type_your_weight"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:textColor="@color/Green"
+                    android:textColorHint="@color/Green" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginRight="25dp"
+                android:hint="@string/type_desired_weight"
+                android:textColorHint="@color/DarkGreen"
+                app:counterTextColor="@color/DarkGreen"
+                app:helperTextTextColor="@color/DarkGreen"
+                app:hintTextColor="@color/DarkGreen"
+                app:placeholderTextColor="@color/DarkGreen"
+                app:prefixTextColor="@color/DarkGreen"
+                app:startIconDrawable="@drawable/baseline_auto_awesome_24"
+                app:startIconTint="@color/DarkGreen"
+                app:suffixTextColor="@color/DarkGreen">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/EditTextDesiredWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/type_desired_weight"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:textColor="@color/Green"
+                    android:textColorHint="@color/Green" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/DeleteWeightButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="75dp"
+                android:layout_marginRight="50dp"
+                android:text="delete weight"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:cornerRadius="10dp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="325dp"
+        android:background="@drawable/image_relativelaiut_shape"
+        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="@+id/relativeLayout"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/baseline_person_32" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

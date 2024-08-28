@@ -13,6 +13,12 @@
         android:theme="@style/Theme.WeightLossControlAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".DeleteAllEntries"
+            android:exported="false" />
+        <activity
+            android:name=".ui.notifications.DeleteAllWeightButtonActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.home.DataBaseError"
             android:exported="false" />
         <activity

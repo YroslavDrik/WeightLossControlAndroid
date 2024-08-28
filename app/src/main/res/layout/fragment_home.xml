@@ -30,7 +30,7 @@
                 <RelativeLayout
                     android:id="@+id/relativeLayout4"
                     android:layout_width="match_parent"
-                    android:layout_height="500dp"
+                    android:layout_height="550dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
@@ -41,14 +41,14 @@
                         android:id="@+id/barChart"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="15dp" />
+                        android:layout_margin="5dp" />
 
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/relativeLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="100dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="10dp"
@@ -59,29 +59,12 @@
                         android:layout_height="match_parent">
 
                         <ProgressBar
-                            android:id="@+id/progressBarDay"
-                            style="?android:attr/progressBarStyleHorizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginTop="50dp"
-                            android:layout_marginEnd="75dp"
-                            android:background="@color/LightGray"
-                            android:max="100"
-                            android:progress="5"
-                            android:progressDrawable="@drawable/progress_bar_style"
-                            app:layout_constraintEnd_toStartOf="@+id/TextDay"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            tools:ignore="DuplicateIds" />
-
-                        <ProgressBar
                             android:id="@+id/progressBarWeight"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"
-                            android:layout_marginTop="45dp"
+                            android:layout_marginTop="30dp"
                             android:layout_marginEnd="75dp"
                             android:background="@color/LightGray"
                             android:max="100"
@@ -90,34 +73,49 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@+id/TextWeight"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/progressBarWeight"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0"
                             tools:ignore="DuplicateIds,NotSibling" />
-
-                        <TextView
-                            android:id="@+id/TextDay"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="47dp"
-                            android:layout_marginEnd="10dp"
-                            android:gravity="center"
-                            android:text="123/123"
-                            android:textColor="@color/white"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:id="@+id/TextWeight"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="28dp"
                             android:layout_marginEnd="10dp"
                             android:gravity="center"
                             android:text="133/123"
                             android:textColor="@color/white"
                             android:textStyle="bold"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/TextDay" />
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/DayTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="@string/day"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/progressBarWeight" />
+
+                        <TextView
+                            android:id="@+id/WeightTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:text="@string/weight_now"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.992"
+                            app:layout_constraintStart_toEndOf="@+id/DayTextView"
+                            app:layout_constraintTop_toBottomOf="@+id/progressBarWeight"
+                            app:layout_constraintVertical_bias="0.518" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 

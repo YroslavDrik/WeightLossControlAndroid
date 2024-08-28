@@ -20,6 +20,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.example.weightlosscontrolandroid.DeleteAllEntries;
 import com.example.weightlosscontrolandroid.ListAdapter;
 import com.example.weightlosscontrolandroid.LoginActivity;
 import com.example.weightlosscontrolandroid.Todo;
@@ -40,7 +41,7 @@ public class NotificationsFragment extends Fragment {
     private static final String PASSWORD_KEY = "UserDataPassword";
 
     private Button ExitButton;
-    private Button ChangeDesiredWeigh;
+    private Button ChangeDesiredWeigh , DeleteAllWeightRecordsButton;
     private SwipeRefreshLayout SwipeLayout;
     private TextView WeightNow , WeightDesired;
     private EditText AddDesiredWeightEditText;
@@ -79,6 +80,15 @@ public class NotificationsFragment extends Fragment {
             }
         });
 
+        DeleteAllWeightRecordsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), DeleteAllEntries.class));
+                getActivity().finish();
+            }
+        });
+
+
         ChangeDesiredWeigh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,6 +99,7 @@ public class NotificationsFragment extends Fragment {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         mDatabase.child("DesiredWeight").setValue(DesiredWeight);
+                        AddDesiredWeightEditText.setText("");
                     }
 
                     @Override
@@ -108,6 +119,7 @@ public class NotificationsFragment extends Fragment {
         WeightNow = binding.WeightNow;
         ChangeDesiredWeigh = binding.ChangeDesiredWeigh;
         AddDesiredWeightEditText = binding.AddDesiredWeightEditText;
+        DeleteAllWeightRecordsButton = binding.DeleteAllWeightRecordsButton;
         getDataUser();
         UpdateBase();
     }

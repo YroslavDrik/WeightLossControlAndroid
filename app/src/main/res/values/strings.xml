@@ -11,5 +11,7 @@
     <string name="type_desired_weight">Type desired weight</string>
     <string name="type_your_weight">Type your weight</string>
     <string name="title_activity_main2">MainActivity2</string>
+    <string name="day">Control days:</string>
+    <string name="weight_now">Weight now:</string>
 
 </resources>
