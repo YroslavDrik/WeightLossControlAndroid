@@ -36,7 +36,6 @@ public class DashboardFragment extends Fragment {
 
     private FragmentDashboardBinding binding;
 
-    private SwipeRefreshLayout UpdateDataBese;
 
     private Todo UserData;
     private DatabaseReference mDatabase;
@@ -58,13 +57,6 @@ public class DashboardFragment extends Fragment {
         init();
 
 
-        UpdateDataBese.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                UpdateBase();
-                UpdateDataBese.setRefreshing(false);
-            }
-        });
 
         AddWeightButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,7 +82,7 @@ public class DashboardFragment extends Fragment {
         SharedPreferences DataUser = getActivity().getSharedPreferences( SAVEDATAUSER  , getActivity().MODE_PRIVATE);
         UserName = DataUser.getString(USERNAME_KEY , null);
 
-        UpdateDataBese = binding.swipeUpdate;
+
         listView = binding.ListView;
         AddWeightButton = binding.AddWeight;
         AddWeightEditText =binding.AddWeightEditText;
