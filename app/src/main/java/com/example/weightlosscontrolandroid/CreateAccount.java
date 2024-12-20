@@ -58,17 +58,17 @@ public class CreateAccount extends AppCompatActivity {
                     DateChanges.add(currentDate);
                     mDatabase = FirebaseDatabase.getInstance().getReference("Account");
                     WeightChanges.add(Double.parseDouble(EditTextWeightChanges.getText().toString()));
-
+                    String username = EditTextUserName.getText().toString().replace(".", "_");
                     Todo todo = new Todo(
-                            EditTextUserName.getText().toString(),
-                            EditTextUserName.getText().toString(),
+                            username,
+                            username,
                             EditTextPassword.getText().toString(),
                             Double.parseDouble(EditTextDesiredWeight.getText().toString()),
                             WeightChanges,DateChanges);
-                    String fer = EditTextUserName.getText().toString();
 
-                    mDatabase.child(fer).setValue(todo).addOnCompleteListener(task -> {
-                        SaveDataUser( EditTextUserName.getText().toString() ,EditTextPassword.getText().toString());
+
+                    mDatabase.child(username).setValue(todo).addOnCompleteListener(task -> {
+                        SaveDataUser(username ,EditTextPassword.getText().toString());
                         Intent intent = new Intent(CreateAccount.this, MainActivity.class);
                         startActivity(intent);
                         finish();

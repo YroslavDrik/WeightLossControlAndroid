@@ -66,8 +66,9 @@ public class LoginActivity extends AppCompatActivity {
             LoginIn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    String NameUser = EditTextUserName.getText().toString();
-                    String PasswordText = TextBoxPassword.getText().toString();
+                    String NameUser = EditTextUserName.getText().toString().replace("." , "_").trim();
+                    String PasswordText = TextBoxPassword.getText().toString().trim();
+
                     if(!TextUtils.isEmpty(NameUser) && !TextUtils.isEmpty(PasswordText)){
                         DataSnapshot dataSnapshot;
                         mDatabase = FirebaseDatabase.getInstance().getReference("Account").child(NameUser);
@@ -76,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 Todo todo = snapshot.getValue(Todo.class);
                                 if (todo.UserNameDataBase.equals(NameUser) && todo.Password.equals(PasswordText)) {
-                                    SaveDataUser(todo.UserNameDataBase , todo.Password);
+                                    SaveDataUser(NameUser , todo.Password);
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     startActivity(intent);
                                     finish();

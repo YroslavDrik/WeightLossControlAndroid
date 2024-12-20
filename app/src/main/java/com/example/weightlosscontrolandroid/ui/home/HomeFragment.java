@@ -100,7 +100,9 @@ public class HomeFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 UserData = snapshot.getValue(Todo.class);
                 SetProgressBar(UserData.DateChanges.get(0) , UserData.WeightChanges , UserData.DesiredWeight);
-                RenderChart renderChart = new RenderChart(getActivity(), UserData.WeightChanges, BarChart);
+                int size = UserData.WeightChanges.size();
+                int start = Math.max(size - 8, 0);
+                RenderChart renderChart = new RenderChart(getActivity(), UserData.WeightChanges.subList(start , size), BarChart);
                 renderChart.renderBarChart();
             }
 

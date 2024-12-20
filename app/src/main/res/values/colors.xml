@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="DarkGray">#FF191919</color>
+    <color name="white">#E9E3E1</color>
+    <color name="DarkGray">#F1000000</color>
     <color name="Gray">#FF262626</color>
-    <color name="LightGray">#FF404040</color>
-    <color name="Green">#12A962</color>
-    <color name="DarkGreen">#FF14ba6c</color>
-    <color name="LightGreen">#1BF58E</color>
+    <color name="LightGray">#FE2C2C2C</color>
+    <color name="Green">#E95714</color>
+    <color name="DarkGreen">#C2C7330C</color>
+    <color name="LightGreen">#FFF26314</color>
 
 </resources>

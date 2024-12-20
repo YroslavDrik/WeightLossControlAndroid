@@ -2,12 +2,14 @@ package com.example.weightlosscontrolandroid.ui.dashboard;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import androidx.annotation.NonNull;
@@ -96,7 +98,8 @@ public class DashboardFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 UserData = snapshot.getValue(Todo.class);
                 List<String> StringList = CreatingStringListBox(UserData.WeightChanges);
-                ListAdapter adapter = new ListAdapter(getActivity(), StringList  , UserData.DateChanges);
+                List<String> ReverseDate =  ReverseDateList(UserData.DateChanges);
+                ListAdapter adapter = new ListAdapter(getActivity(), StringList,ReverseDate);
                 listView.setAdapter(adapter);
             }
 
@@ -124,7 +127,8 @@ public class DashboardFragment extends Fragment {
                 mDatabase.child("WeightChanges").setValue(WeightList);
                 mDatabase.child("DateChanges").setValue(DateList);
                 List<String> StringList = CreatingStringListBox(UserData.WeightChanges);
-                ListAdapter adapter = new ListAdapter(getActivity(), StringList  , UserData.DateChanges);
+                List<String> ReverseDate =  ReverseDateList(UserData.DateChanges);
+                ListAdapter adapter = new ListAdapter(getActivity(), StringList  , ReverseDate);
                 listView.setAdapter(adapter);
                 UpdateBase();
 
@@ -147,7 +151,13 @@ public class DashboardFragment extends Fragment {
         }
         return FullString;
     }
-
+    private List<String> ReverseDateList(List<String> date){
+        List<String> FullArray = new ArrayList<String>();
+        for(int i = date.size()-1;i>-1;i--){
+            FullArray.add(date.get(i));
+        }
+        return FullArray;
+    }
     @Override
     public void onDestroyView() {
         super.onDestroyView();
